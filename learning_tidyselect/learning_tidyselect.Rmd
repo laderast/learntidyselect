@@ -218,6 +218,27 @@ penguins %>%
   summarize(across(where(is.double), mean, na.rm=TRUE))
 ```
 
+## Other verbs that have `cols` arguments
+
+### `tidyr::pivot_longer()`
+
+Another application that you might have not thought of is using `tidyselect` in `pivot_longer`. 
+
+Using `pivot_longer()` with variables that have "bill" in them. 
+
+```{r pivlong, exercise=TRUE}
+penguins %>%
+  pivot_longer(contains("bill"), names_to="metric", values_to="value")
+```
+
+Using `pivot_longer()` with variables that are `numeric`:
+
+```{r pivlong2, exercise=TRUE}
+penguins %>%
+  pivot_longer(where(is.numeric), names_to="metric",
+               values_to="value")
+```
+
 ## For More Info
 
 I just realized that I inadvertently reproduced this article by Hadley Wickham. Sorry!
