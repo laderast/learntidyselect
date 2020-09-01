@@ -6,6 +6,9 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+
+install.packages("palmerpenguins")
+
 knitr::opts_chunk$set(echo = FALSE)
 library(palmerpenguins)
 library(tidyverse)
