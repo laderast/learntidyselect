@@ -7,11 +7,10 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
-library(palmerpenguins)
 library(tidyverse)
-library(likert)
-data("gap")
-data("penguins")
+library(here)
+gap <- readRDS("data/gap.rds")
+penguins <- readRDS("data/penguins.rds")
 ```
 
 
